@@ -58,7 +58,7 @@ st.sidebar.info(aboutInfo)
 
 # File paths
 spoof_path = 'audio_sample/CON_T_0000001.wav'
-bona_fide_path = 'audio_sample/CON_T_0000002.wav'
+bona_fide_path = 'audio_sample/LA_T_1007571.wav'
 
 # Visualization selection
 visualization_option = st.selectbox(
