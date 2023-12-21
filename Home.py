@@ -2,19 +2,6 @@ import streamlit as st
 
 st.set_page_config(layout="wide")
 
-# Add custom CSS styles to set the background image
-st.markdown(
-    """
-    <style>
-    .sidebar .sidebar-content {
-        background-image: linear-gradient(#2e7bcf,#2e7bcf);
-        color: white;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
 # Customize the sidebar
 aboutInfo = """
 This project attempts to explore the use of machine learning in detecting both fully and partially spoofed audio. 
@@ -32,12 +19,16 @@ st.write("Imagine a reality where audio recordings can be convincingly altered t
 st.header("Bona Fide VS Spoof")
 
 # Read spoof audio file
-spoof_audio_file_path = "D:/User/Downloads/DSProject_Data/PartialSpoof/database/train/0/CON_T_0000001.wav"
-with open(spoof_audio_file_path, "rb") as spoof_audio_file:
-    spoof_audio_bytes = spoof_audio_file.read()
+spoof_audio_file_path1 = "audio_sample/CON_T_0000001.wav"
+with open(spoof_audio_file_path1, "rb") as spoof_audio_file1:
+    spoof_audio_bytes1 = spoof_audio_file1.read()
+
+spoof_audio_file_path2 = "audio_sample/CON_T_0000002.wav"
+with open(spoof_audio_file_path2, "rb") as spoof_audio_file2:
+    spoof_audio_bytes2 = spoof_audio_file2.read()
 
 # Read bona fide audio file
-bona_fide_audio_file_path = "D:/User/Downloads/DSProject_Data/PartialSpoof/database/train/1/LA_T_1007571.wav"
+bona_fide_audio_file_path = "audio_sample/LA_T_1007571.wav"
 with open(bona_fide_audio_file_path, "rb") as bona_fide_audio_file:
     bona_fide_audio_bytes = bona_fide_audio_file.read()
 
@@ -46,11 +37,11 @@ audio1, audio2 = st.columns([1,1])
 with audio1:
     # Display audio players
     st.write("🎵 Play this audio: ")
-    st.audio(spoof_audio_bytes, format='audio/wav')
+    st.audio(spoof_audio_bytes1, format='audio/wav')
 
 with audio2:
     st.write("🎵 Play this audio too: ")
-    st.audio(bona_fide_audio_bytes, format='audio/wav')
+    st.audio(spoof_audio_bytes2, format='audio/wav')
 
 st.info("Can you guess which one is a partially spoofed audio? ")
 
