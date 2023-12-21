@@ -3,8 +3,8 @@ import os
 import time
 import joblib
 import scipy.io
-import subprocess
 import pandas as pd
+import matlab.engine
 import soundfile as sf
 from sklearn.preprocessing import StandardScaler
 
@@ -13,7 +13,8 @@ def extract_features(audio_path):
     mat_path = 'features.mat'
 
     # Run MATLAB with the script file and pass arguments
-    subprocess.run(["matlab", "-nosplash", "-nodesktop", "-r", f"feature_extraction('{audio_path}', '{mat_path}')"])
+    eng = matlab.engine.start_matlab()
+    eng.feature_extraction(audio_path, mat_path)
 
     with st.spinner("Analyzing audio patterns..."):
         # Wait until the "features.mat" file is created
