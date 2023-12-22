@@ -134,14 +134,14 @@ fig_class = px.bar(class_counts, x='label', y='count', color='label',
 # Show the Plotly figure
 st.plotly_chart(fig_class, use_container_width=True)
 
-st.subheader("Distribution of Audio Duration")
+# st.subheader("Distribution of Audio Duration")
 
-# Load audio duration data
-duration_path = "extracted_features/audioDuration.csv"
-duration_data = pd.read_csv(duration_path)
+# # Load audio duration data
+# duration_path = "extracted_features/audioDuration.csv"
+# duration_data = pd.read_csv(duration_path)
 
-# Create an interactive violin plot with Plotly for audio duration distribution
-fig_duration = px.violin(duration_data, x="Label", y="duration", box=True, points="all", hover_data=["duration"])
+# # Create an interactive violin plot with Plotly for audio duration distribution
+# fig_duration = px.violin(duration_data, x="Label", y="duration", box=True, points="all", hover_data=["duration"])
 
-# Display the Plotly figure in Streamlit
-st.plotly_chart(fig_duration, use_container_width=True)
+# # Display the Plotly figure in Streamlit
+# st.plotly_chart(fig_duration, use_container_width=True)
