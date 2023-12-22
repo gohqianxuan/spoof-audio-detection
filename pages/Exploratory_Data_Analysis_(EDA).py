@@ -101,8 +101,8 @@ test = pd.read_csv("extracted_features/GTCC-MFCC_test.csv", header=None, names=c
 # Combine datasets to show dataframe
 data = pd.concat([train, val, test], ignore_index=True)
 
-if st.checkbox('Show Raw Data (GTCCs & MFCCs)'):
-    st.dataframe(data)
+if st.checkbox('Show Sample Raw Data (GTCCs & MFCCs)'):
+    st.dataframe(train)
 
 st.subheader("Distribution of Classes (After Feature Extraction)")
 
