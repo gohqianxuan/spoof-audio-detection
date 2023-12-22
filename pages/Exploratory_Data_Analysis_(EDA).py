@@ -106,7 +106,7 @@ if st.checkbox('Show Sample Raw Data (GTCCs & MFCCs)'):
 st.subheader("Distribution of Classes (After Feature Extraction)")
 
 # Combine datasets and map labels to 'spoof' and 'bona fide'
-data = pd.concat([train, val, test], ignore_index=True, keys=['Train', 'Validation', 'Test'], names=['Set'])
+data = pd.concat([train, val, test], keys=['Train', 'Validation', 'Test'], names=['Set'])
 data = data.reset_index()
 data['label'] = data['label'].map({0: 'Spoof (0)', 1: 'Bona fide (1)'})
 
