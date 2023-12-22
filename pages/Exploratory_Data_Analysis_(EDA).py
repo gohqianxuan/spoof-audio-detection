@@ -90,20 +90,6 @@ st.pyplot(fig)
 # Header for partial spoof database distribution
 st.header("PartialSpoof Database")
 
-st.subheader("Distribution of Audio Duration")
-
-# Load audio duration data
-duration_path = "extracted_features/audioDuration.csv"
-duration_data = pd.read_csv(duration_path)
-
-# Create an interactive violin plot with Plotly for audio duration distribution
-fig_duration = px.violin(duration_data, x="Label", y="duration", box=True, points="all", hover_data=["duration"])
-
-# Display the Plotly figure in Streamlit
-st.plotly_chart(fig_duration, use_container_width=True)
-
-st.subheader("Distribution of Classes (After Feature Extraction)")
-
 # Load GTCC-MFCC data
 col_names = ['feature' + str(i) for i in range(1, 80)]
 col_names.append('label')
@@ -112,11 +98,17 @@ train = pd.read_csv("extracted_features/GTCC-MFCC_train.csv", header=None, names
 val = pd.read_csv("extracted_features/GTCC-MFCC_val.csv", header=None, names=col_names)
 test = pd.read_csv("extracted_features/GTCC-MFCC_test.csv", header=None, names=col_names)
 
-# Combine the datasets
-data = pd.concat([train, val, test], keys=['Train', 'Validation', 'Test'], names=['Set'])
-data = data.reset_index()
+# Combine datasets to show dataframe
+data = pd.concat([train, val, test], ignore_index=True)
 
-# Map labels to 'spoof' and 'bona fide'
+if st.checkbox('Show Raw Data (GTCCs & MFCCs)'):
+    st.dataframe(data)
+
+st.subheader("Distribution of Classes (After Feature Extraction)")
+
+# Combine datasets and map labels to 'spoof' and 'bona fide'
+data = pd.concat([train, val, test], ignore_index=True, keys=['Train', 'Validation', 'Test'], names=['Set'])
+data = data.reset_index()
 data['label'] = data['label'].map({0: 'Spoof (0)', 1: 'Bona fide (1)'})
 
 # Sidebar for selecting the dataset
@@ -141,3 +133,15 @@ fig_class = px.bar(class_counts, x='label', y='count', color='label',
 
 # Show the Plotly figure
 st.plotly_chart(fig_class, use_container_width=True)
+
+st.subheader("Distribution of Audio Duration")
+
+# Load audio duration data
+duration_path = "extracted_features/audioDuration.csv"
+duration_data = pd.read_csv(duration_path)
+
+# Create an interactive violin plot with Plotly for audio duration distribution
+fig_duration = px.violin(duration_data, x="Label", y="duration", box=True, points="all", hover_data=["duration"])
+
+# Display the Plotly figure in Streamlit
+st.plotly_chart(fig_duration, use_container_width=True)
