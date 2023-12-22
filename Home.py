@@ -46,7 +46,7 @@ with audio2:
 st.info("Can you guess which one is a partially spoofed audio? ")
 
 # Add three buttons for user guessing
-col1, col2, col3 = st.columns([1,1.17,3])
+col1, col2, col3 = st.columns([1,1,1])
 
 first_button = col1.button("The First One!")
 second_button = col2.button("The Second One!")
