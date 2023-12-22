@@ -91,8 +91,7 @@ st.pyplot(fig)
 st.header("PartialSpoof Database")
 
 # Load GTCC-MFCC data
-col_names = ['feature' + str(i) for i in range(1, 80)]
-col_names.append('label')
+col_names = ['LogEnergy'] + [f'GTCC{i}' for i in range(13)] + ['LogEnergy_delta'] + [f'GTCC{i}_delta' for i in range(13)] + ['LogEnergy_delta-delta'] + [f'GTCC{i}_delta-delta' for i in range(13)] + [f'MFCC{i}' for i in range(13)] + [f'MFCC{i}_delta' for i in range(13)] + [f'MFCC{i}_delta-delta' for i in range(13)] + ['label']
 
 train = pd.read_csv("extracted_features/GTCC-MFCC_train.csv", header=None, names=col_names)
 val = pd.read_csv("extracted_features/GTCC-MFCC_val.csv", header=None, names=col_names)
