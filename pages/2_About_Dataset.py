@@ -207,6 +207,7 @@ with st.expander("Learn more about **MFCC** and **GTCC**"):
         <p style='text-align: justify;'>
             <h4>Mel-Frequency Cepstral Coefficients (MFCC)</h4>
             Think of MFCC as a translator for sound, enabling computers to understand the intricacies of audio. It breaks down sound into different components and captures its frequency content. This allows computers to analyze patterns and recognize unique characteristics in the audio signal.
+            MFCCs can be calculated by conducting five consecutive processes, include signal framing, computing of the power spectrum, applying a Mel filter bank to the obtained power spectra, calculating the logarithm values, and finally applying the Discrete Cosine Transform (DCT).  
             <br><br>
             <h4>Gammatone Cepstral Coefficients (GTCC)</h4>
             GTCC takes MFCC a step further by mimicking how our ears hear. It employs Gammatone filters to capture the complexities of sound, making it robust even in noisy environments. GTCC features enhance SpAD's ability to identify patterns and nuances in audio, ensuring a reliable and secure audio authentication process.
