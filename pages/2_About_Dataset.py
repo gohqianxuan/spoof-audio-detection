@@ -225,10 +225,7 @@ test = pd.read_csv("extracted_features/GTCC-MFCC_test.csv", header=None, names=c
 
 # Show sample training data if toggled
 if st.toggle('Show sample raw data after feature extraction (GTCC & MFCC)'):
-    with st.spinner("Fetching Data for Display. Almost there!"):
-        # Combine datasets to show dataframe
-        data = pd.concat([train, val, test], ignore_index=True)
-        st.dataframe(data)
+    st.dataframe(train)
 st.write("")
 
 # Plot class distribution
