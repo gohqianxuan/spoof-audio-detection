@@ -29,12 +29,12 @@ with st.container(border=True):
     st.markdown("<h2 style='font-family: Bahnschrift; text-align: center;'>Bona Fide VS Spoof</h2>", unsafe_allow_html=True)
 
     # Read spoof audio file
-    spoof_audio_file_path = "D:/User/Downloads/DSProject_Data/PartialSpoof/database/train/0/CON_T_0000001.wav"
+    spoof_audio_file_path = "audio_sample/CON_T_0000001.wav"
     with open(spoof_audio_file_path, "rb") as spoof_audio_file:
         spoof_audio_bytes = spoof_audio_file.read()
 
     # Read bona fide audio file
-    bona_fide_audio_file_path = "D:/User/Downloads/DSProject_Data/PartialSpoof/database/train/1/LA_T_1007571.wav"
+    bona_fide_audio_file_path = "audio_sample/CON_T_0000002.wav"
     with open(bona_fide_audio_file_path, "rb") as bona_fide_audio_file:
         bona_fide_audio_bytes = bona_fide_audio_file.read()
 
