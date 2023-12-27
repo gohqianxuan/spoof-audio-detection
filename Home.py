@@ -17,11 +17,11 @@ st.sidebar.write("")
 st.sidebar.caption("© Made by Goh Qian Xuan. All rights reserved.")
 
 # Introduction section
-intro = """
-    Welcome to the forefront of audio authenticity in the digital age! In a world filled with awe-inspiring technological breakthroughs, the rise of 'deepfake' technology has sparked both marvel and concern.
-    \n\nImagine a reality where audio recordings can be convincingly altered to make someone appear to say things they never did. Deepfake audio has reached a level where human detection capabilities struggle, with participants correctly identifying deepfakes only 73% of the time (Mai et al., 2023).
-    """
-st.markdown(f"<p style='text-align: justify;'>{intro}</p>", unsafe_allow_html=True)
+intro = """Welcome to the forefront of audio authenticity in the digital age! In a world filled with awe-inspiring technological breakthroughs, the rise of 'deepfake' technology has sparked both marvel and concern.
+        <br><br>
+        Imagine a reality where audio recordings can be convincingly altered to make someone appear to say things they never did. Deepfake audio has reached a level where human detection capabilities struggle, with participants in a recent study correctly identifying deepfakes only 73% of the time.
+        """
+st.markdown("<p style='text-align: justify;'>{intro}</p>", unsafe_allow_html=True)
 st.write("")
 
 # Display Spoof vs. Bona Fide audios
@@ -68,32 +68,25 @@ with st.container(border=True):
 
 # Additional sections
 st.write("")
-st.markdown("""The implications of deepfake audio are profound, as evidenced by cases of AI-driven voice cloning scams causing significant financial losses and emotional exploitation.
-            \nEnter our solution — a deepfake audio detection algorithm designed to empower you in the battle against fraud audio content.""")
+st.markdown("""<p style='text-align: justify;'>
+            The downside of deepfake audio are profound, as evidenced by cases of AI-driven voice cloning scams causing significant financial losses and emotional exploitation.
+            <br><br>
+            Enter our solution — a deepfake audio detection algorithm designed to empower you in the battle against fraud audio content.
+            </p>""", unsafe_allow_html=True)
 
 st.divider()
 
 st.markdown("<h2 style='font-family: Bahnschrift;'>Why SpAD?</h2>", unsafe_allow_html=True)
 st.markdown("""
-    - **Security:** SpAD enhances audio security by learning from a vast database of audio files, ensuring accurate and reliable detection.
+            - **Security:** SpAD enhances audio security by learning from [a vast database of audio files](https://spoof-audio-detection.streamlit.app/About_Dataset), ensuring accurate detection to protect you from fraud and scams.
 
-    - **Robustness:** GTCC (Gammatone Cepstral Coefficients) features make SpAD resilient in various environments, providing consistent performance even in challenging acoustic conditions.
+            - **Robustness:** GTCC (Gammatone Cepstral Coefficients) and MFCC (Mel-Frequency Cepstral Coefficients) features make SpAD resilient in noisy environments, providing consistent performance even in challenging conditions.
 
-    - **User-Friendly:** SpAD brings advanced audio authentication to your fingertips, making it easy for users to identify genuine audio.
-    """)
-
-st.divider()
-
-st.markdown("<h2 style='font-family: Bahnschrift;'>How SpAD Works:</h2>", unsafe_allow_html=True)
-st.markdown("""
-            1. **Learning from Data:** SpAD learns from a diverse set of 25,380 audio files, making it adept at recognizing patterns and distinguishing between genuine and spoofed audio.
-
-            2. **GTCC and MFCC Features:** By extracting GTCC (Gammatone Cepstral Coefficients) and MFCC (Mel-Frequency Cepstral Coefficients) features, SpAD captures the unique characteristics of audio signals, ensuring a robust and accurate authentication process.
-
-            3. **User-Friendly Interface:** The SpAD web app provides an intuitive interface for users to analyze audio files and determine their authenticity.
+            - **User-Friendly:** The SpAD web app brings advanced [audio authentication](https://spoof-audio-detection.streamlit.app/Spoof_Audio_Detection_(SpAD)) to your fingertips, making it easy for users to identify spoofed audio.
             """)
 
 st.divider()
+
 st.markdown("<div style='text-align: center; font-family: Georgia, serif; font-size: 29px;'><i>Welcome to Spoof Audio Detection (SpAD), where the future of audio authenticity begins.</i></div>", unsafe_allow_html=True)
 
 # Styling
