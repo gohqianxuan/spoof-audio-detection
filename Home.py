@@ -21,7 +21,7 @@ intro = """Welcome to the forefront of audio authenticity in the digital age! In
         <br><br>
         Imagine a reality where audio recordings can be convincingly altered to make someone appear to say things they never did. Deepfake audio has reached a level where human detection capabilities struggle, with participants in a recent study correctly identifying deepfakes only 73% of the time.
         """
-st.markdown("<p style='text-align: justify;'>{intro}</p>", unsafe_allow_html=True)
+st.markdown(fff"<p style='text-align: justify;'>{intro}</p>", unsafe_allow_html=True)
 st.write("")
 
 # Display Spoof vs. Bona Fide audios
