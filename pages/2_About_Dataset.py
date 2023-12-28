@@ -196,7 +196,7 @@ with st.container(border=True):
 features_intro = """
     Even with visual representations, distinguishing genuine audio is still challenging for human. 
     This is where SpAD comes in! 
-    SpAD leverages advanced machine learning algorithms trained on <strong>MFCC</strong> (Mel-Frequency Cepstral Coefficients) and <strong>GTCC</strong> (Gammatone Cepstral Coefficients) features. 
+    SpAD leverages advanced machine learning algorithms trained on <strong>Mel-Frequency Cepstral Coefficients</strong> (MFCC) and <strong>Gammatone Cepstral Coefficients</strong> (GTCC) features. 
     These features are extracted from a diverse dataset of 25,380 audio files from the PartialSpoof Database.
     """
 st.markdown(f"<p style='text-align: justify;'>{features_intro}</p>", unsafe_allow_html=True)
@@ -264,6 +264,6 @@ with st.container(border=True):
 smote = """
     Our class distribution bar chart reveals the imbalances between partial spoofed and bona fide audio data. 
     Fear not, for we've unleashed the power of <strong>SMOTE</strong> (Synthetic Minority Over-sampling Technique)!  
-    This cutting-edge technique magically transforms our data distribution, oversampling the minority class, and harmonizing the symphony of our dataset.
+    This cutting-edge technique transforms our data distribution, oversampling the minority class, and harmonizing the symphony of our dataset.
     """
 st.markdown(f"<p style='text-align: justify;'>{smote}</p>", unsafe_allow_html=True)
