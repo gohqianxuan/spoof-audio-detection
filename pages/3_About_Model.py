@@ -22,7 +22,7 @@ st.markdown("""<p style='text-align: justify;'>
 
 with st.expander("Check out the architecture of SpAD's audio classification model"):
     st.write("")
-    st.image("https://i.imgur.com/0eKv4vS.png")
+    st.image("https://i.imgur.com/prxCGFR.png")
     st.markdown("<div style='text-align: center; font-size: 14px;'><i>Architecture of SpAD's audio classification model.</i></div>", unsafe_allow_html=True)
     st.write("")
 
