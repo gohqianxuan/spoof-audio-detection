@@ -17,6 +17,8 @@ def get_sound_data(path):
 # Function to plot waveform
 def plot_waveform(data, title, ax):
     ax.set_title(title)
+    ax.set_xlabel('Time (s)')
+    ax.set_ylabel('Amplitude')
     librosa.display.waveshow(data[0], sr=data[1], color='r', alpha=0.7, ax=ax)
 
 # Function to plot spectrogram
@@ -33,6 +35,7 @@ def plot_mel_spectrogram(data, title, ax):
     S = librosa.feature.melspectrogram(y=data[0], sr=data[1], n_mels=128)
     log_S = librosa.amplitude_to_db(S, ref=np.max)
     im = librosa.display.specshow(log_S, sr=data[1], x_axis='time', y_axis='mel', ax=ax)
+    ax.set_xlabel('Time (s)')
     ax.figure.colorbar(im, format='%+02.0f dB', ax=ax)
 
 # Function to plot chroma
@@ -40,6 +43,7 @@ def plot_chroma(data, title, ax):
     ax.set_title(title)
     S = librosa.feature.chroma_cqt(y=data[0], sr=data[1])
     im = librosa.display.specshow(S, sr=data[1], x_axis='time', y_axis='chroma', vmin=0, vmax=1, ax=ax)
+    ax.set_xlabel('Time (s)')
     ax.figure.colorbar(im, ax=ax)
     
 # Customize the sidebar
