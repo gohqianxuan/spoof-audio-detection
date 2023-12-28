@@ -205,7 +205,7 @@ features_intro = """
     """
 st.markdown(f"<p style='text-align: justify;'>{features_intro}</p>", unsafe_allow_html=True)
 
-with st.expander("Learn more about **MFCC** and **GTCC**"):
+with st.expander("Learn more about MFCC and GTCC"):
     st.markdown(
         """
         <p style='text-align: justify;'>
