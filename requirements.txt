@@ -11,3 +11,4 @@ scipy
 seaborn
 soundfile
 streamlit
+streamlit_extras
