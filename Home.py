@@ -93,21 +93,12 @@ st.markdown("<div style='text-align: center; font-family: Georgia, serif; font-s
 background = """
     <style>
         [data-testid="stAppViewContainer"] > .main {
-            background-image: url("https://i.imgur.com/pcvge06.jpg");
+            background-image: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), 
+                              url("https://i.imgur.com/pcvge06.jpg");
             background-size: cover;  /* Use "cover" to maintain aspect ratio and cover the entire container */
             background-position: center;
             background-repeat: no-repeat;
             position: relative;  /* Ensure the container is positioned relative */
-        }
-
-        [data-testid="stAppViewContainer"] > .main::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.88);
         }
     </style>
     """
