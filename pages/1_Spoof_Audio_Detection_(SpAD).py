@@ -2,19 +2,23 @@ import streamlit as st
 import os
 import time
 import joblib
+import librosa
 import scipy.io
 import subprocess
 import numpy as np
 import soundfile as sf
 import plotly.express as px
 
-# Function to get audio data
-def get_sound_data(path):
-    data, sr = sf.read(path)
-    return data, sr
+# Function to get and resample audio data
+def get_sound_data(path, sr=16000):
+    data, fsr = sf.read(path)
+    data_16k = librosa.resample(data.T, orig_sr=fsr, target_sr=sr)
+    if len(data_16k.shape) > 1:
+        data_16k = np.average(data_16k, axis=0)
+    return data_16k, sr
 
-# Function to plot animated waveform
-def plot_animated_waveform(audio_data, sample_rate):
+# Function to plot waveform
+def plot_waveform(audio_data, sample_rate):
     time = np.arange(0, len(audio_data)) / sample_rate
     fig = px.line(x=time, y=audio_data, labels={'x': 'Time (s)', 'y': 'Amplitude'})    
     st.plotly_chart(fig, use_container_width=True)
@@ -136,7 +140,7 @@ style = """
             border-radius: 15px;
             border-style: none;
             background-color: white; 
-            padding: 1% 2%;              
+            padding: 2% 3%;              
         }
         
         body {
@@ -175,7 +179,7 @@ if uploaded_file is not None:
         st.markdown("<h3 style='font-family: Bahnschrift;'>Waveform of Your Audio</h3>", unsafe_allow_html=True)
 
         with st.container(border=True):
-            plot_animated_waveform(audio_data, sample_rate)
+            plot_waveform(audio_data, sample_rate)
         
     # Tab 2: Prediction Result
     with tab2:
@@ -192,7 +196,7 @@ if uploaded_file is not None:
         if prediction == 0:
             st.markdown("<h3 style='font-family: Bahnschrift';>Spoof Detected</h3>", unsafe_allow_html=True)
 
-            col1, col2 = st.columns([1, 5])
+            col1, col2 = st.columns([1.15, 5])
             # Image column
             with col1:
                 st.image("https://i.imgur.com/ZhWCcT1.png", width=135)  
@@ -209,7 +213,7 @@ if uploaded_file is not None:
             st.markdown("<h3 style='font-family: Bahnschrift;'>Bona Fide Voice</h3>", unsafe_allow_html=True)
             st.balloons()
 
-            col1, col2 = st.columns([1, 5])
+            col1, col2 = st.columns([1.1, 5])
             # Image column
             with col1:
                 st.image("https://i.imgur.com/vRqhj7A.png", width=115) 
