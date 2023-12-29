@@ -78,16 +78,16 @@ st.divider()
 
 st.markdown("<h2 style='font-family: Bahnschrift;'>Why SpAD?</h2>", unsafe_allow_html=True)
 st.markdown("""
-            - **Security:** SpAD enhances audio security by learning from [a vast database of audio files](https://spoof-audio-detection.streamlit.app/About_Dataset), ensuring accurate detection to protect you from fraud and scams.
+            - **Security:** SpAD enhances audio security by learning from a vast [database](https://spoof-audio-detection.streamlit.app/About_Dataset) of audio files, ensuring accurate detection to protect you from fraud and scams.
 
-            - **Robustness:** GTCC (Gammatone Cepstral Coefficients) and MFCC (Mel-Frequency Cepstral Coefficients) features make SpAD resilient in noisy environments, providing consistent performance even in challenging conditions.
+            - **Robustness:** SpAD leverages the power of machine learning to deliver a robust solution for accurate audio authentication. Through meticulous comparison of four distinct [models](https://spoof-audio-detection.streamlit.app/About_Model), the top-performing Random Forest is selected for SpAD.
 
             - **User-Friendly:** The SpAD web app brings advanced [audio authentication](https://spoof-audio-detection.streamlit.app/Spoof_Audio_Detection_(SpAD)) to your fingertips, making it easy for users to identify spoofed audio.
             """)
 
 st.divider()
 
-st.markdown("<div style='text-align: center; font-family: Georgia, serif; font-size: 29px;'><i>Welcome to Spoof Audio Detection (SpAD), where the future of audio authenticity begins.</i></div>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; font-family: Georgia, serif; font-weight: 400'><i>Welcome to Spoof Audio Detection (SpAD), where the future of audio authenticity begins.</i></h3>", unsafe_allow_html=True)
 
 # Styling
 background = """
@@ -157,7 +157,7 @@ bonaFideVsSpoof = """
             border-radius: 15px;
             border-style: none;
             background-color: white; 
-            padding: 1% 2%;  
+            padding: 2% 4%;  
         }
 
         div.st-emotion-cache-keje6w.e1f1d6gn3 {
