@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 # Customize page title
-st.markdown("<h1 style='font-family: Bahnschrift; font-size: 50px; font-weight: 700;'>Spoof Audio Detection (SpAD)</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='font-family: Bahnschrift;'>Spoof Audio Detection (SpAD)</h1>", unsafe_allow_html=True)
 
 # Customize the sidebar
 aboutInfo = """
