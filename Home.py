@@ -98,7 +98,6 @@ background = """
             background-position: center;
             background-repeat: no-repeat;
             position: relative;  /* Ensure the container is positioned relative */
-            overflow: hidden;  /* Hide overflow to prevent scrolling */
         }
 
         [data-testid="stAppViewContainer"] > .main::before {
@@ -109,7 +108,6 @@ background = """
             width: 100%;
             height: 100%;
             background-color: rgba(255, 255, 255, 0.88);
-            z-index: 1;  /* Ensure the white overlay is above the background image */
         }
     </style>
     """
