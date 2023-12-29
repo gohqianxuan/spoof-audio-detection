@@ -188,6 +188,7 @@ with st.container(border=True):
     st.write("")
 
 # Intro to MFCC&GTCC 
+st.write("")
 features_intro = """
     Even with visual representations, distinguishing genuine audio is still challenging for human. 
     This is where SpAD comes in! 
@@ -256,6 +257,7 @@ with st.container(border=True):
     st.plotly_chart(fig_class, use_container_width=True)
 
 # Intro to smote 
+st.write("")
 smote = """
     Our class distribution bar chart reveals the imbalances between partial spoofed and bona fide audio data. 
     Fear not, for we've unleashed the power of <strong>SMOTE</strong> (Synthetic Minority Over-sampling Technique)!  
