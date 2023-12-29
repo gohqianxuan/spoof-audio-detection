@@ -72,7 +72,7 @@ style = """
 st.markdown(style, unsafe_allow_html=True)
 
 st.markdown("""<p style='text-align: justify;'>
-            Dive into the realm of advanced audio classification with our <strong>machine learning</strong> models. 
+            Dive into the realm of advanced audio classification with our <strong>machine learning</strong> models, powered by scikit-learn. 
             Take a look at the different stages of our architecture — from initial audio file input through feature extraction, strategic oversampling, model training, to the pinnacle of classification. 
             </p>""", unsafe_allow_html=True)
 
