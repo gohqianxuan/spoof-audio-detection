@@ -97,8 +97,7 @@ background = """
                               url("https://i.imgur.com/pcvge06.jpg");
             background-size: cover;  /* Use "cover" to maintain aspect ratio and cover the entire container */
             background-position: center;
-            background-repeat: no-repeat;
-            position: relative;  /* Ensure the container is positioned relative */
+            background-repeat: repeat;
         }
     </style>
     """
