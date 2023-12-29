@@ -91,12 +91,14 @@ st.markdown("<div style='text-align: center; font-family: Georgia, serif; font-s
 
 # Styling
 background = """
-    <style>  
+    <style>
         [data-testid="stAppViewContainer"] > .main {
             background-image: url("https://i.imgur.com/pcvge06.jpg");
-            background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
-            background-position: center;  
+            background-size: cover;  /* Use "cover" to maintain aspect ratio and cover the entire container */
+            background-position: center;
             background-repeat: no-repeat;
+            position: relative;  /* Ensure the container is positioned relative */
+            overflow: hidden;  /* Hide overflow to prevent scrolling */
         }
 
         [data-testid="stAppViewContainer"] > .main::before {
@@ -106,7 +108,8 @@ background = """
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.88); 
+            background-color: rgba(255, 255, 255, 0.88);
+            z-index: 1;  /* Ensure the white overlay is above the background image */
         }
     </style>
     """
