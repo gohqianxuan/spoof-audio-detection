@@ -84,7 +84,7 @@ with st.expander("Check out the architecture of SpAD's audio classification mode
 
 st.write("")
 st.markdown("""<p style='text-align: justify;'>
-            Our four meticulously trained models are poised for comparison, each revealing its unique strengths, leading to the selection of the top performer — <strong>Random Forest</strong>.  
+            The four meticulously trained models are poised for comparison, each revealing its unique strengths, leading to the selection of the top performer — <strong>Random Forest</strong>.  
             <br><br>
             The complete code for data preparation, modelling and model evaluation can be found at <a href="https://github.com/gohqianxuan/spoof-audio-detection/tree/main" target="_blank">GitHub</a>.
             </p>""", unsafe_allow_html=True)
