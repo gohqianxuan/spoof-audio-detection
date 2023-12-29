@@ -126,7 +126,7 @@ style = """
             border-radius: 15px;
             border-style: none;
             background-color: white; 
-            padding: 1% 2%;              
+            padding: 2% 3%;              
         }
         
         body {
