@@ -58,7 +58,7 @@ st.sidebar.write("")
 st.sidebar.caption("© Made by Goh Qian Xuan. All rights reserved.")
 
 # Customize page title
-st.markdown("<h1 style='font-family: Bahnschrift; font-size: 50px; font-weight: 700;'>About Dataset</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='font-family: Bahnschrift;'>About Dataset</h1>", unsafe_allow_html=True)
 
 # Intro to database
 st.markdown("<h2 style='font-family: Bahnschrift;'>PartialSpoof Database</h2>", unsafe_allow_html=True)
@@ -114,20 +114,11 @@ style = """
         }
     
         [data-testid="stAppViewContainer"] > .main {
-            background-image: url("https://i.imgur.com/pcvge06.jpg");
-            background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
-            background-position: center;  
-            background-repeat: no-repeat;
-        }
-
-        [data-testid="stAppViewContainer"] > .main::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.88);  
+            background-image: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), 
+                              url("https://i.imgur.com/pcvge06.jpg");
+            background-size: cover;  /* Use "cover" to maintain aspect ratio and cover the entire container */
+            background-position: center;
+            background-repeat: repeat;
         }
 
         div.st-emotion-cache-r421ms.e1f1d6gn0 {
