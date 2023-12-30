@@ -83,8 +83,7 @@ with st.expander("See how the partial spoofed audio is generated"):
 
     partialSpoofProcedure = "https://nii-yamagishilab.github.io/zlin-demo/IS2021/wavs/train/CON_T_0000001.png"
     st.image(partialSpoofProcedure)
-    st.markdown("<div style='text-align: center; font-size: 13px;'><i>Detail of audio substitution. (Example of CON_T_0000001.wav). (Zhang et al., 2022).</i></div>", unsafe_allow_html=True)
-    st.write("")
+    st.markdown("<p style='text-align: center;'><i>Detail of audio substitution. (Example of CON_T_0000001.wav). (Zhang et al., 2022).</i></p>", unsafe_allow_html=True)
 
 # Styling
 style = """
@@ -193,7 +192,7 @@ features_intro = """
     Even with visual representations, distinguishing genuine audio is still challenging for human. 
     This is where SpAD comes in! 
     SpAD leverages advanced machine learning algorithms trained on <strong>Mel-Frequency Cepstral Coefficients</strong> (MFCC) and <strong>Gammatone Cepstral Coefficients</strong> (GTCC) features. 
-    These features are extracted from a diverse dataset of 25,380 audio files from the PartialSpoof Database.
+    These features are extracted from a diverse training set of 25,380 audio files from the PartialSpoof Database.
     """
 st.markdown(f"<p style='text-align: justify;'>{features_intro}</p>", unsafe_allow_html=True)
 
@@ -211,6 +210,10 @@ with st.expander("Learn more about MFCC and GTCC"):
         """,
         unsafe_allow_html=True
     )
+    st.write("")
+    st.write()
+    st.image("https://www.mathworks.com/help/audio/ref/mfcc-block-diagram.png")
+    st.markdown("<p style='text-align: center;'><i>MFCC and GTCC block diagram. (The MathWorks Inc., 2020).</i></p>", unsafe_allow_html=True)
 st.write("")
 
 # Load GTCC-MFCC data
@@ -256,11 +259,15 @@ with st.container(border=True):
     # Show the Plotly figure
     st.plotly_chart(fig_class, use_container_width=True)
 
-# Intro to smote 
+# Intro to smote
 st.write("")
 smote = """
-    Our class distribution bar chart reveals the imbalances between partial spoofed and bona fide audio data. 
+    Our class distribution bar chart reveals the <strong>imbalance</strong> between partial spoofed and bona fide audio data. 
+    The majority of the database consists of spoofed audio because it aims to comprehensively capture the various ways attackers can manipulate audio in the Partial Spoofing (PS) scenario. 
+    To reflect the wide spectrum of possible scenarios, various Text-to-Speech (TTS) and Voice Conversion (VC) methods is employed. 
+    The database intentionally incorporates different proportions of generated audio segments within a single utterance, and spoof segments are strategically inserted at different positions.
+    <br><br>
     Fear not, for we've unleashed the power of <strong>SMOTE</strong> (Synthetic Minority Over-sampling Technique)!  
-    This cutting-edge technique transforms our data distribution, oversampling the minority class, and harmonizing the symphony of our dataset.
+    This cutting-edge technique magically transforms our training data distribution, oversampling the minority class, and harmonizing the symphony of our dataset.
     """
 st.markdown(f"<p style='text-align: justify;'>{smote}</p>", unsafe_allow_html=True)
