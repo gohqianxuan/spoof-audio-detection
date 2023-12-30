@@ -21,7 +21,7 @@ st.sidebar.caption("© Made by Goh Qian Xuan. All rights reserved.")
 # Introduction section
 intro = """Welcome to the forefront of audio authenticity in the digital age! In a world filled with awe-inspiring technological breakthroughs, the rise of 'deepfake' technology has sparked both marvel and concern.
         <br><br>
-        Imagine a reality where audio recordings can be convincingly altered to make someone appear to say things they never did. Deepfake audio has reached a level where human detection capabilities struggle, with participants in a recent study correctly identifying deepfakes only 73% of the time.
+        Imagine someone having the ability to convincingly alter your audio recordings, scamming your friends or family for money. Deepfake audio has reached a level where human detection capabilities struggle, with participants in a recent study correctly identifying deepfakes only 73% of the time.
         """
 st.markdown(f"<p style='text-align: justify;'>{intro}</p>", unsafe_allow_html=True)
 st.write("")
@@ -53,19 +53,26 @@ with st.container(border=True):
 
     st.info("Can you guess which one is a partially spoofed audio? ")
 
-    # Add three buttons for user guessing
-    col1, col2, col3 = st.columns([1, 1, 1])
+    # Add four buttons for user guessing
+    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
     st.write("")
 
     first_button = col1.button("The First One!")
     second_button = col2.button("The Second One!")
-    no_idea = col3.button("No idea!")
+    both_button = col3.button("Both!")
+    none_button = col4.button("None!")
 
     # Check user's guess
-    if first_button or second_button or no_idea:
+    if first_button or second_button or none_button:
         st.error("""Awwww! Both of them are not bona fide audio :< 
                     \nBut don't worry, distinguishing between spoofed and bona fide audio can be tricky! 
                     That's why our Spoof Audio Detection (SpAD) is here for you. """)
+        st.write("")
+
+    if both_button:
+        st.warning("""You are right! Both of them are not bona fide audio. 
+                      \nBut don't worry, distinguishing between spoofed and bona fide audio can be tricky! 
+                      That's why our Spoof Audio Detection (SpAD) is here for you. """)
         st.write("")
 
 # Additional sections
