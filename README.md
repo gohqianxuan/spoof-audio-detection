@@ -4,7 +4,7 @@ _Spoof Audio Detection App: Empower you in the battle against deepfake audio._
 
 ## Overview
 
-Powered by robust machine learning models and wrapped in a Streamlit interface, SpAD helps you to differentiate between bona fide and spoofed audio.
+This project explores the use of machine learning in detecting partially spoofed audio. Powered by robust machine learning models and wrapped in a Streamlit interface, SpAD helps you to differentiate between bona fide and spoofed audio.
 
 ## Run SpAD Locally
 
