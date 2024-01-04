@@ -153,7 +153,7 @@ with st.container(border=True):
     # Visualization selection
     visualization_option = st.selectbox(
         "Select Audio Visualization",
-        ["Waveform", "Spectrogram", "Mel Spectrogram", "Chroma"]
+        ["Waveform", "Spectrogram", "Mel Spectrogram", "Chroma", "Mel Frequency Cepstral Coefficients", "Gammatone Cepstral Coefficients"]
     )
 
     # Load audio data
@@ -161,30 +161,55 @@ with st.container(border=True):
     audio_data_bona_fide = get_sound_data(bona_fide_path)
 
     # Plot selected visualization
-    fig, ax = plt.subplots(1, 2, figsize=(13, 5))  
     if visualization_option == "Waveform":
+        fig, ax = plt.subplots(1, 2, figsize=(13, 5))  
         plot_waveform(audio_data_spoof, "Spoof - Waveform", ax[0])
         plot_waveform(audio_data_bona_fide, "Bona Fide - Waveform", ax[1])
         st.markdown("**Waveform** representation provides a visual of the audio signal over time, showcasing the amplitude variations in the audio file.")
+        st.write("")
+        st.pyplot(fig)
 
     elif visualization_option == "Spectrogram":
+        fig, ax = plt.subplots(1, 2, figsize=(13, 5))  
         plot_spectrogram(audio_data_spoof, "Spoof - Spectrogram", ax[0])
         plot_spectrogram(audio_data_bona_fide, "Bona Fide - Spectrogram", ax[1])
         st.markdown("**Spectrogram** illustrates the frequency content of the audio signal across time, revealing patterns and characteristics in the audio spectrum.")
-
+        st.write("")
+        st.pyplot(fig)
+        
     elif visualization_option == "Mel Spectrogram":
+        fig, ax = plt.subplots(1, 2, figsize=(13, 5))  
         plot_mel_spectrogram(audio_data_spoof, "Spoof - Mel Spectrogram", ax[0])
         plot_mel_spectrogram(audio_data_bona_fide, "Bona Fide - Mel Spectrogram", ax[1])
         st.markdown("**Mel Spectrogram** highlights the distribution of energy in different frequency bands over time, offering insights into the audio's mel-frequency content.")
-
+        st.write("")
+        st.pyplot(fig)
+        
     elif visualization_option == "Chroma":
+        fig, ax = plt.subplots(1, 2, figsize=(13, 5))  
         plot_chroma(audio_data_spoof, "Spoof - Chroma", ax[0])
         plot_chroma(audio_data_bona_fide, "Bona Fide - Chroma", ax[1])
         st.markdown("**Chroma** representation captures the tonal content of the audio, emphasizing the presence of musical notes and harmonics throughout the recording.")
-
-    st.write("")
-    st.pyplot(fig)
-    st.write("")
+        st.write("")
+        st.pyplot(fig)
+        
+    elif visualization_option == "Mel Frequency Cepstral Coefficients":
+        st.markdown("**Mel Frequency Cepstral Coefficients** representation transforms the audio signal into a cepstral domain, capturing the mel-frequency characteristics.")
+        st.write("")
+        mfcc1, mfcc2 = st.columns([1,1])
+        mfcc1.markdown("<div style='text-align: center;'>Spoof - Mel Frequency Cepstral Coefficients</div>", unsafe_allow_html=True)
+        mfcc1.image("https://i.imgur.com/fwONXzA.png")
+        mfcc2.markdown("<div style='text-align: center;'>Bona Fide - Mel Frequency Cepstral Coefficients</div>", unsafe_allow_html=True)
+        mfcc2.image("https://i.imgur.com/ysoBOgV.png")
+        
+    elif visualization_option == "Gammatone Cepstral Coefficients":
+        st.markdown("**Gammatone Cepstral Coefficients** representation harnesses the power of gammatone filters to extract cepstral coefficients, enhancing audio feature extraction.")
+        st.write("")
+        gtcc1, gtcc2 = st.columns([1,1])
+        gtcc1.markdown("<div style='text-align: center;'>Spoof - Gammatone Cepstral Coefficients</div>", unsafe_allow_html=True)
+        gtcc1.image("https://i.imgur.com/Ygsjgs8.png")
+        gtcc2.markdown("<div style='text-align: center;'>Bona Fide - Gammatone Cepstral Coefficients</div>", unsafe_allow_html=True)
+        gtcc2.image("https://i.imgur.com/yFBFyXN.png")
 
 # Intro to MFCC&GTCC 
 st.write("")
