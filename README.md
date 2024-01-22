@@ -1,10 +1,16 @@
 # Spoof Audio Detection (SpAD)
 
-_Spoof Audio Detection App: Empower you in the battle against deepfake audio._ 
+_[Spoof Audio Detection App](https://spoof-audio-detection.streamlit.app/): Empower you in the battle against deepfake audio._ 
 
 ## Overview
 
 This project explores the use of machine learning in detecting partially spoofed audio. Powered by robust machine learning models and wrapped in a Streamlit interface, SpAD helps you to differentiate between bona fide and spoofed audio.
+
+## Database
+
+The dataset used in this project is the labeled audio files from the [PartialSpoof database](https://zenodo.org/records/5766198) (Zhang et al., 2022). 
+
+PartialSpoof is an open-source partially spoofed audio dataset constructed from ASVspoof 2019 LA database using some voice activity-detection (VAD) algorithms. Each partially spoofed utterance in the PartialSpoof database contains a mix of both spoofed and bona fide segments, and may contain audio segments generated using more than one TTS or VC method.
 
 ## Run SpAD Locally
 
