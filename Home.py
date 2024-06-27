@@ -123,10 +123,9 @@ background = """
 
 sidebarLogo = """
     <style>    
-        [data-testid="stSidebarNav"] {
+        [data-testid="stSidebarHeader"] {
             background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmRscmdoZXdvY3VsbWg2ZzA2NzE2d3VhdHdtejJ6b2VkeTA2NmRkaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ASBM73xrwXA7ij894w/giphy.gif);
             background-repeat: no-repeat;
-            padding-top: 85px;
             background-position: 20px 20px;
             background-size: 280px;
             height: 48%;
